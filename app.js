@@ -230,14 +230,30 @@ function buildSkills(){
 
 /* ====== EXPERIENCIA — alternando izquierda/derecha ====== */
 function buildExperience(){
-  const t=$('#timeline'); t.innerHTML="";
-  CMS.experience.forEach((e,i)=>{
-    const side = (i % 2 === 0) ? 'left' : 'right'; // 0,2 izquierda — 1,3 derecha
-    const it=document.createElement('div'); it.className=`item ${side}`;
-    it.innerHTML=`<div class="meta"><strong>${e.role}</strong> · ${e.org} · ${e.period}</div><ul>${e.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>`;
+  const t = $('#timeline');
+  t.innerHTML = '';
+
+  // Orden explícito: IZQ, DER, IZQ, DER
+  const sides = ['left','right','left','right'];
+
+  CMS.experience.forEach((e, i) => {
+    const side = sides[i] || (i % 2 === 0 ? 'left' : 'right'); // fallback si hay más items
+    const it = document.createElement('div');
+    it.className = `item ${side}`;
+
+    // Escalera: una tarjeta por fila
+    it.style.gridRow = String(i + 1);
+    it.style.gridColumn = (side === 'right') ? '2' : '1';
+
+    it.innerHTML = `
+      <div class="meta"><strong>${e.role}</strong> · ${e.org} · ${e.period}</div>
+      <ul>${e.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+    `;
     t.appendChild(it);
   });
 }
+
+
 
 /* ====== CONTACTO ====== */
 function setupContact(){
