@@ -8,14 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Orbitron:wght@600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=131">
+  <link rel="stylesheet" href="./styles.css?v=211">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
 </head>
 <body>
   <canvas id="bg"></canvas>
   <div class="bg-grid" aria-hidden="true"></div>
 
-  <!-- START -->
+  <!-- LOADER -->
   <div id="loader" class="loader show" role="dialog" aria-modal="true">
     <div class="loader-inner">
       <img src="imagenes/juli.png" alt="Julieta (ilustración)" class="loader-avatar">
@@ -25,7 +25,7 @@
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- HEADER -->
   <header class="site-header">
     <a class="brand" href="#home" data-link>
       <span class="brand-mark">&lt;/&gt;</span>
@@ -50,14 +50,17 @@
     <!-- INICIO -->
     <section id="home" class="view active">
       <div class="monitor fit">
-        <div class="titlebar"><span class="light r"></span><span class="light y"></span><span class="light g"></span><b>terminal — bienvenida</b></div>
+        <div class="titlebar">
+          <span class="light r"></span><span class="light y"></span><span class="light g"></span>
+          <b>terminal — bienvenida</b>
+        </div>
         <div class="screen hero-wrap">
           <canvas id="heroFx" aria-hidden="true"></canvas>
 
           <h1 class="title-xxl">
-            Construyo <b>sitios</b> y <b>sistemas</b> que <em>venden</em> y <em>escalan</em>
+            Si buscás <b>resultados</b>, escribo el <b>código</b> y obtenés <em>logros</em> asegurados
           </h1>
-          <p class="lead">Experiencias con impacto: conecto procesos, datos y equipo para lanzar y crecer.</p>
+          <p class="lead">Rápido de desplegar, simple de operar, listo para escalar.</p>
 
           <div class="cta">
             <a class="btn neon-snake primary" href="#about" data-link>&lt;Sobre mí/&gt;</a>
@@ -82,7 +85,10 @@
     <!-- SOBRE MÍ -->
     <section id="about" class="view">
       <div class="monitor fit">
-        <div class="titlebar"><span class="light r"></span><span class="light y"></span><span class="light g"></span><b>about — perfil</b></div>
+        <div class="titlebar">
+          <span class="light r"></span><span class="light y"></span><span class="light g"></span>
+          <b>about — perfil</b>
+        </div>
         <div class="screen about-grid">
           <aside class="portrait">
             <img id="avatarImg" alt="Foto de Julieta Meza" />
@@ -91,60 +97,61 @@
           <article class="panel glass">
             <header>
               <h2 class="h2">Sobre mí</h2>
-              <p class="sub">Téc. Univ. en Programación — <b>UTN FRT</b> (Tucumán). Colaboro con equipos para transformar objetivos en software real.</p>
+              <p class="sub">Téc. Univ. en Programación — <b>UTN FRT</b> (Tucumán). Desarrollo soluciones con foco en UX, rendimiento y escalabilidad.</p>
             </header>
 
             <p id="bio"></p>
             <ul id="highlights" class="list bullets"></ul>
 
-            <!-- módulos sin repetir habilidades -->
-            <div class="about-mods">
-              <div class="about-box">
-                <h4>Cómo trabajo</h4>
-                <ul class="list tight">
-                  <li>Discovery y definición de objetivos</li>
-                  <li>Prototipo rápido y validación</li>
-                  <li>MVP y medición</li>
-                  <li>Iteraciones con feedback</li>
-                </ul>
-              </div>
-              <div class="about-box">
-                <h4>Lo que te entrego</h4>
-                <ul class="list tight">
-                  <li>Código claro y documentado</li>
-                  <li>Integraciones listas (pagos, WhatsApp, email)</li>
-                  <li>Tableros básicos de métricas</li>
-                  <li>Guía de uso para tu equipo</li>
-                </ul>
-              </div>
-              <div class="about-box">
-                <h4>Calidad y performance</h4>
-                <ul class="list tight">
-                  <li>Accesibilidad y SEO técnico</li>
-                  <li>Optimización de carga</li>
-                  <li>Buenas prácticas de seguridad</li>
-                  <li>Pruebas en flujos críticos</li>
-                </ul>
-              </div>
-              <div class="about-box">
-                <h4>Soporte</h4>
-                <ul class="list tight">
-                  <li>Seguimiento post-entrega</li>
-                  <li>Planes de evolución</li>
-                  <li>Automatización donde convenga</li>
-                  <li>Capacitación breve al equipo</li>
-                </ul>
-              </div>
-            </div>
-
+            <!-- CONTADORES -->
             <div id="gauges" class="gauges">
               <div class="gauge" data-target="2" data-max="3"><div class="ring"><div class="bar"></div></div><div class="num">0+</div><small>Años</small></div>
               <div class="gauge" data-target="30" data-max="30"><div class="ring"><div class="bar"></div></div><div class="num">0+</div><small>Proyectos</small></div>
               <div class="gauge" data-target="20" data-max="25"><div class="ring"><div class="bar"></div></div><div class="num">0+</div><small>Clientes</small></div>
             </div>
+
+            <!-- MÓDULOS -->
+            <div class="about-mods">
+              <div class="about-box">
+                <h4>Cómo trabajo</h4>
+                <ul class="list tight">
+                  <li>Comunicación clara para entender objetivos, estilo y prioridades.</li>
+                  <li>Descubrimiento, propuesta y roadmap simple.</li>
+                  <li>Sistemas rápidos y usables desde el día uno.</li>
+                  <li>Iteraciones con feedback y mejoras continuas.</li>
+                </ul>
+              </div>
+              <div class="about-box">
+                <h4>Lo que te entrego</h4>
+                <ul class="list tight">
+                  <li>Integraciones listas (pagos, WhatsApp, email).</li>
+                  <li>Chatbots/IA cuando aporta valor real.</li>
+                  <li>Accesibilidad y SEO técnico.</li>
+                  <li>Documentación simple y handoff prolijo.</li>
+                </ul>
+              </div>
+              <div class="about-box">
+                <h4>Calidad de trabajo</h4>
+                <ul class="list tight">
+                  <li>Código profesional, limpio y mantenible.</li>
+                  <li>Soluciones escalables y seguras.</li>
+                  <li>Optimización de carga y métricas.</li>
+                  <li>Buenas prácticas en cada entrega.</li>
+                </ul>
+              </div>
+              <div class="about-box">
+                <h4>Soporte</h4>
+                <ul class="list tight">
+                  <li>Seguimiento post-entrega.</li>
+                  <li>Planes de evolución.</li>
+                  <li>Automatización donde convenga.</li>
+                  <li>Capacitación breve al equipo.</li>
+                </ul>
+              </div>
+            </div>
           </article>
 
-          <!-- Gatito asomando en la esquina inferior izquierda (como señalaste) -->
+          <!-- Gatito -->
           <div id="catPeek" class="cat-peek-global"></div>
         </div>
       </div>
@@ -153,7 +160,10 @@
     <!-- SERVICIOS -->
     <section id="services" class="view">
       <div class="monitor fit">
-        <div class="titlebar"><span class="light r"></span><span class="light y"></span><span class="light g"></span><b>services — catálogo</b></div>
+        <div class="titlebar">
+          <span class="light r"></span><span class="light y"></span><span class="light g"></span>
+          <b>services — catálogo</b>
+        </div>
         <div class="screen">
           <header class="section-head">
             <h2 class="h2">Servicios</h2>
@@ -167,7 +177,10 @@
     <!-- PROYECTOS -->
     <section id="projects" class="view">
       <div class="monitor fit">
-        <div class="titlebar"><span class="light r"></span><span class="light y"></span><span class="light g"></span><b>projects — casos</b></div>
+        <div class="titlebar">
+          <span class="light r"></span><span class="light y"></span><span class="light g"></span>
+          <b>projects — casos</b>
+        </div>
         <div class="screen">
           <header class="section-head projects-head">
             <h2 class="h2">Proyectos</h2>
@@ -181,7 +194,10 @@
     <!-- HABILIDADES -->
     <section id="skills" class="view">
       <div class="monitor fit">
-        <div class="titlebar"><span class="light r"></span><span class="light y"></span><span class="light g"></span><b>skills — stack</b></div>
+        <div class="titlebar">
+          <span class="light r"></span><span class="light y"></span><span class="light g"></span>
+          <b>skills — stack</b>
+        </div>
         <div class="screen">
           <header class="section-head skills-head inline">
             <h2 class="h2">Habilidades</h2>
@@ -199,7 +215,10 @@
     <!-- EXPERIENCIA -->
     <section id="experience" class="view">
       <div class="monitor fit">
-        <div class="titlebar"><span class="light r"></span><span class="light y"></span><span class="light g"></span><b>experience — timeline</b></div>
+        <div class="titlebar">
+          <span class="light r"></span><span class="light y"></span><span class="light g"></span>
+          <b>experience — timeline</b>
+        </div>
         <div class="screen">
           <header class="section-head">
             <h2 class="h2">Experiencia</h2>
@@ -216,7 +235,10 @@
     <!-- CONTACTO -->
     <section id="contact" class="view">
       <div class="monitor fit">
-        <div class="titlebar"><span class="light r"></span><span class="light y"></span><span class="light g"></span><b>contact — iniciar proyecto</b></div>
+        <div class="titlebar">
+          <span class="light r"></span><span class="light y"></span><span class="light g"></span>
+          <b>contact — iniciar proyecto</b>
+        </div>
         <div class="screen">
           <header class="section-head">
             <h2 class="h2">Contacto</h2>
@@ -236,7 +258,7 @@
 
               <div class="form-actions">
                 <button type="submit" class="btn solid icon-left">
-                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#25D366" d="M.057 24l1.687-6.163A11.94 11.94 0 0112.02 0c6.627 0 12 5.373 12 12s-5.373 12-12 12a11.95 11.95 0 01-6.356-1.837L.057 24z"/><path fill="#FFF" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.672.15-.198.297-.768.966-.94 1.164-.173.198-.347.223-.644.074-1.758-.879-2.91-1.57-4.066-3.554-.307-.527.307-.489.879-1.63.098-.198.049-.37-.025-.519-.075-.149-.672-1.611-.918-2.206-.242-.58-.487-.501-.672-.51l-.573-.01c-.198 0-.52.074-.792.37s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.72 2.006-1.414.248-.694.248-1.289.173-1.414-.074-.124-.272-.198-.57-.347z"/></svg>
+                  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="#25D366" d="M.057 24l1.687-6.163A11.94 11.94 0 0112.02 0c6.627 0 12 5.373 12 12s-5.373 12-12 12a11.95 11.95 0 01-6.356-1.837L.057 24z"/><path fill="#FFF" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.672.15-.198.297-.768.966-.94 1.164-.173.198-.347.223-.644.074-1.758-.879-2.91-1.57-4.066-3.554-.307-.527.307-.489.879-1.63.098-.198.49-.59.42-.74-.075-.149-.672-1.611-.918-2.206-.242-.58-.487-.501-.672-.51l-.573-.01c-.198 0-.52.074-.792.37s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.72 2.006-1.414.248-.694.248-1.289.173-1.414-.074-.124-.272-.198-.57-.347z"/></svg>
                   WhatsApp
                 </button>
                 <button type="button" id="sendGmail" class="btn outline icon-left">
@@ -268,6 +290,7 @@
     </section>
   </main>
 
+  <!-- LIGHTBOX -->
   <div id="lightbox" class="lightbox">
     <img alt="Galería"/>
     <button class="btn-nav prev">◀</button>
@@ -276,6 +299,6 @@
   </div>
 
   <footer class="site-footer"><p>© <span id="year"></span> Julieta Meza.</p></footer>
-  <script src="./app.js?v=131"></script>
+  <script src="./app.js?v=211"></script>
 </body>
 </html>
