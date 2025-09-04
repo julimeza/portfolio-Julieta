@@ -257,21 +257,59 @@ function buildExperience(){
 
 /* ====== CONTACTO ====== */
 function setupContact(){
-  const sel=$('#cService'); if(sel){ sel.innerHTML=`<option value="" disabled selected>Seleccioná un servicio…</option>`+CMS.services.map(s=>`<option>${s.title}</option>`).join(''); }
-  $('#contactForm')?.addEventListener('submit',e=>{
+  const sel = $('#cService');
+  if (sel) {
+    sel.innerHTML =
+      `<option value="" disabled selected>Seleccioná un servicio…</option>` +
+      CMS.services.map(s => `<option>${s.title}</option>`).join('');
+  }
+
+  $('#contactForm')?.addEventListener('submit', e => {
     e.preventDefault();
-    const n=$('#cName').value.trim(), em=$('#cEmail').value.trim(), srv=$('#cService').value, m=$('#cMsg').value.trim();
-    const txt=encodeURIComponent(`Hola Julieta, soy ${n} (${em}). Me interesa: ${srv}. ${m}`);
-    open(`https://wa.me/${fmtPhone(CMS.whatsapp)}?text=${txt}`,'_blank');
+    const n = $('#cName').value.trim();
+    const em = $('#cEmail').value.trim();
+    const srv = $('#cService').value;
+    const m = $('#cMsg').value.trim();
+    const txt = encodeURIComponent(`Hola Julieta, soy ${n} (${em}). Me interesa: ${srv}. ${m}`);
+    open(`https://wa.me/${fmtPhone(CMS.whatsapp)}?text=${txt}`, '_blank');
   });
-  $('#sendGmail')?.addEventListener('click',()=>{
-    const n=$('#cName').value.trim(), srv=$('#cService').value, m=$('#cMsg').value.trim();
-    const sub=encodeURIComponent(`Proyecto: ${srv || 'Consulta'}`);
-    const body=encodeURIComponent(`Hola Julieta,\n\nSoy ${n}.\n\n${m}\n\nGracias.`);
-    location.href=`mailto:${CMS.email}?subject=${sub}&body=${body}`;
+
+  // ✅ NUEVO: abrir Gmail compose con los datos del form
+  $('#sendGmail')?.addEventListener('click', e => {
+    e.preventDefault();
+
+    const n   = ($('#cName').value || '').trim() || 'Sin nombre';
+    const em  = ($('#cEmail').value || '').trim();
+    const srv = ($('#cService').value || '').trim() || 'Consulta';
+    const m   = ($('#cMsg').value || '').trim();
+
+    const to  = CMS.email;
+    const su  = encodeURIComponent(`Proyecto: ${srv}`);
+    const bo  = encodeURIComponent(
+`Hola Julieta,
+Soy ${n}${em ? ` (${em})` : ''}.
+
+Servicio: ${srv}
+Mensaje: ${m}
+
+Gracias.`
+    );
+
+    // Abre Gmail (si el usuario está logueado en Gmail)
+    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${encodeURIComponent(to)}&su=${su}&body=${bo}`;
+    const win = window.open(gmailUrl, '_blank');
+
+    // Fallback a mailto si el popup fue bloqueado o no hay Gmail
+    setTimeout(() => {
+      if (!win || win.closed || typeof win.closed === 'undefined') {
+        location.href = `mailto:${to}?subject=${su}&body=${bo}`;
+      }
+    }, 500);
   });
-  $('#channels').innerHTML = CMS.channels.map(c=>`<li>${c.label}: ${c.value}</li>`).join('');
+
+  $('#channels').innerHTML = CMS.channels.map(c => `<li>${c.label}: ${c.value}</li>`).join('');
 }
+
 
 /* ====== FONDOS Y FX ====== */
 function starfield(){
