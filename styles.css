@@ -95,7 +95,7 @@ html{scroll-behavior:smooth}
 .scanlines{position:absolute;inset:0;pointer-events:none;opacity:.1;background:repeating-linear-gradient(180deg,transparent 0 6px,rgba(255,255,255,.07) 6px 7px)}
 
 /* ===== About ===== */
-.about-grid{display:grid;grid-template-columns:320px 1fr;gap:1rem;align-items:start;position:relative}
+.about-grid{display:grid;grid-template-columns:260px 1fr;gap:1rem;align-items:start;position:relative} /* foto más chica */
 @media (max-width:900px){.about-grid{grid-template-columns:1fr}}
 .portrait{position:relative;border:1px dashed var(--stroke);border-radius:16px;background:radial-gradient(500px 220px at -20% -20%,rgba(0,229,255,.18),transparent),radial-gradient(500px 220px at 120% 120%,rgba(124,92,255,.18),transparent);overflow:hidden}
 .portrait img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:14px}
@@ -136,14 +136,12 @@ html{scroll-behavior:smooth}
 .card:hover{transform:translateY(-2px) scale(1.02)}
 .card .head{display:grid;grid-template-columns:1fr auto;gap:.5rem;align-content:center;padding:1rem;border-bottom:1px solid var(--stroke);height:110px}
 .card .head h3{margin:0}
-
-/* === Ajuste para que TODOS los botones queden a la misma altura === */
 .card .body{display:flex;flex-direction:column;gap:.6rem;flex:1;padding:1rem}
 .card .anim{height:140px;display:block;margin:.1rem auto .2rem;filter:drop-shadow(0 8px 20px rgba(0,229,255,.24))}
-.card .desc{margin-bottom:auto}    /* empuja el bloque de links hacia el fondo */
+.card .desc{margin-bottom:auto}
 .card .links{margin-top:.6rem}
 
-/* ===== Proyectos ===== */
+/* ===== Proyectos (grid + detalle) ===== */
 .projects-head{display:grid;grid-template-columns:auto 80px;align-items:center;gap:.6rem}
 .proj-mini{width:80px;height:80px;filter:drop-shadow(0 6px 16px rgba(0,229,255,.35))}
 .showcase{display:grid;gap:12px}
@@ -152,14 +150,22 @@ html{scroll-behavior:smooth}
 
 .project{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--stroke);background:#0e173d;transition:transform .12s ease}
 .project:hover{transform:translateY(-2px) scale(1.03)}
-.project .cover{width:100%;aspect-ratio:16/10;object-fit:cover;filter:saturate(1.05) contrast(1.06);transition:transform .18s ease, filter .18s ease}
-.project .overlay{position:absolute;inset:0;display:grid;place-items:end start;padding:14px;background:rgba(6,10,30,.55);opacity:0;transition:opacity .18s ease;color:#eaf3ff;text-shadow:0 2px 10px rgba(0,0,0,.55)}
-.project:hover .overlay{opacity:1}
-.project:hover .cover{filter:blur(2.2px) brightness(.6) saturate(1)}
-.project .overlay .title{font-weight:800;margin:0 0 4px}
-.project .overlay p{margin:0 0 8px;max-width:96%}
-.project .overlay .links{display:flex;gap:.5rem;flex-wrap:wrap}
-.btn.chip{padding:.5rem .8rem;border-radius:999px;font-size:.92rem;background:rgba(17,27,68,.65);border:1px solid rgba(0,229,255,.25);box-shadow:0 0 0 1px rgba(0,229,255,.12) inset}
+.project .cover{width:100%;aspect-ratio:16/10;object-fit:cover;filter:saturate(1.05) contrast(1.06);transition:transform .18s ease}
+.project .footer{position:absolute;left:0;right:0;bottom:0;padding:.6rem .8rem;background:linear-gradient(180deg, rgba(6,10,30,0) 0, rgba(6,10,30,.85) 45%, rgba(6,10,30,.9) 100%);display:flex;align-items:center;justify-content:space-between;gap:.4rem}
+.project .footer .title{font-weight:800;margin:0}
+.project .footer .faright{display:flex;gap:.4rem}
+.project .footer .btn{padding:.5rem .8rem;border-radius:12px}
+
+/* Detalle */
+.proj-detail-head{display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem}
+.proj-detail{display:grid;grid-template-columns:1.2fr .8fr;gap:.9rem}
+@media (max-width:900px){.proj-detail{grid-template-columns:1fr}}
+.gallery{position:relative;border:1px solid var(--stroke);border-radius:14px;background:#0e173d;overflow:hidden;display:grid;place-items:center;min-height:360px}
+.gallery img{max-width:100%;max-height:70vh;object-fit:contain}
+.gctl{position:absolute;top:50%;transform:translateY(-50%);border:1px solid var(--stroke);background:#111b44;color:#e8f0ff;border-radius:10px;padding:.5rem .7rem;cursor:pointer}
+.gctl.prev{left:10px}.gctl.next{right:10px}
+.pinfo{border:1px solid var(--stroke);border-radius:14px;background:#0e173d;padding:1rem}
+.pinfo .links{margin-top:.6rem;display:flex;gap:.5rem;flex-wrap:wrap}
 
 /* ===== Habilidades ===== */
 .skills-head.inline{display:grid;grid-template-columns:auto auto;align-items:center;gap:.6rem}
@@ -181,9 +187,7 @@ html{scroll-behavior:smooth}
 .skill-zone .tags{display:flex;flex-wrap:wrap;gap:.35rem}
 .badge{border:1px dashed var(--stroke);padding:.35rem .6rem;border-radius:999px;background:linear-gradient(135deg,#121c46,rgba(0,229,255,.15))}
 
-/* ===== Experiencia (ESTILO ORIGINAL con línea central y lados) ===== */
-/* ===== Experiencia (escalera: una tarjeta por fila, alternando columna) ===== */
-/* ===== Experiencia (escalera: una tarjeta por fila alternando) ===== */
+/* ===== Experiencia (Desktop escalera / Mobile orbs) ===== */
 .galaxy-wrap{position:relative;isolation:isolate;border-radius:16px;border:1px solid var(--stroke);overflow:hidden;background:#0e173dbf}
 .galaxy-wrap>canvas{position:absolute;inset:0;z-index:-2}
 .galaxy-wrap.lines::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.14;background:
@@ -195,9 +199,9 @@ html{scroll-behavior:smooth}
 .timeline{
   position:relative;
   display:grid;
-  grid-template-columns:1fr 1fr;  /* izq / der */
-  grid-auto-rows:auto;            /* una fila por ítem */
-  gap:1.2rem 2.6rem;              /* vertical / horizontal */
+  grid-template-columns:1fr 1fr;
+  grid-auto-rows:auto;
+  gap:1.2rem 2.6rem;
   padding:1rem 0;
 }
 .timeline::before{
@@ -219,16 +223,12 @@ html{scroll-behavior:smooth}
 .timeline .item.left { justify-self:end;  margin-right:24px; }
 .timeline .item.right{ justify-self:start;margin-left:24px; }
 
-/* 👇 En móviles MANTENEMOS dos columnas (igual que desktop) */
+/* Mobile: oculto timeline y muestro cards tipo Habilidades */
+.xp-grid{display:none}
 @media (max-width:900px){
-  .timeline{grid-template-columns:1fr 1fr; gap:1rem 1.4rem}
-  .timeline::before,.glowline::after{display:block}
-  .timeline .item{max-width:100%}
-  .timeline .item.left{margin-right:10px}
-  .timeline .item.right{margin-left:10px}
+  .timeline{display:none}
+  .xp-grid{display:grid}
 }
-
-
 
 /* ===== Contacto ===== */
 .contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:.9rem}
@@ -246,16 +246,11 @@ html{scroll-behavior:smooth}
 .contact-card{border:1px solid var(--stroke);border-radius:16px;background:#0e173d;padding:1rem;transition:transform .12s}
 .contact-card:hover{transform:translateY(-2px) scale(1.02)}
 
-/* ===== Lightbox & Footer ===== */
-.lightbox{position:fixed;inset:0;background:rgba(1,6,22,.78);backdrop-filter:blur(4px);display:none;place-items:center;z-index:1400}
-.lightbox.show{display:grid}
-.lightbox img{max-width:88vw;max-height:80vh;border-radius:14px;border:1px solid var(--stroke);box-shadow:0 30px 80px rgba(0,0,0,.5)}
-.btn-nav{position:absolute;border:1px solid var(--stroke);background:#111b44;color:#e8f0ff;border-radius:10px;padding:.6rem .7rem;cursor:pointer;box-shadow:0 0 18px rgba(0,229,255,.25)}
-.btn-nav.prev{left:24px;top:50%;transform:translateY(-50%)}.btn-nav.next{right:24px;top:50%;transform:translateY(-50%)}.btn-nav.close{right:24px;top:24px}
+/* ===== Footer ===== */
+.site-footer{display:grid;place-items:center;height:60px;color:#aecdff}
 
 /* --- SOLO CELULARES: "Sobre mí" sin scroll + gato centrado --- */
 @media (max-width: 900px){
-
   #about .screen{ padding:.5rem }
   .about-grid{ grid-template-columns:1fr; gap:.55rem }
 
@@ -296,4 +291,7 @@ html{scroll-behavior:smooth}
   .portrait{ max-width:180px }
   .gauge .ring{ --size:60px }
   .about-mods{ gap:.4rem }
+}
+@media (max-width: 900px){
+  #about .portrait{ max-width:270px !important; }
 }

@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Orbitron:wght@600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css?v=211">
+  <link rel="stylesheet" href="./styles.css?v=310">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js" defer></script>
 </head>
 <body>
@@ -97,20 +97,29 @@
           <article class="panel glass">
             <header>
               <h2 class="h2">Sobre mí</h2>
-              <p class="sub">Téc. Univ. en Programación — <b>UTN FRT</b> (Tucumán). Desarrollo soluciones con foco en UX, rendimiento y escalabilidad.</p>
+              <p class="sub">Téc. Univ. en Programación — <b>UTN FRT</b> (Tucumán). Desarrollo soluciones con foco en rendimiento y escalabilidad.</p>
             </header>
 
+            <!-- CONTADORES (justo después de la línea anterior) -->
+            <div id="gauges" class="gauges">
+              <div class="gauge" data-target="2" data-max="3">
+                <div class="ring"><div class="bar"></div></div>
+                <div class="num">0+</div><small>Años</small>
+              </div>
+              <div class="gauge" data-target="30" data-max="30">
+                <div class="ring"><div class="bar"></div></div>
+                <div class="num">0+</div><small>Proyectos</small>
+              </div>
+              <div class="gauge" data-target="20" data-max="25">
+                <div class="ring"><div class="bar"></div></div>
+                <div class="num">0+</div><small>Clientes</small>
+              </div>
+            </div>
+
+            <!-- Resto de la info -->
             <p id="bio"></p>
             <ul id="highlights" class="list bullets"></ul>
 
-            <!-- CONTADORES -->
-            <div id="gauges" class="gauges">
-              <div class="gauge" data-target="2" data-max="3"><div class="ring"><div class="bar"></div></div><div class="num">0+</div><small>Años</small></div>
-              <div class="gauge" data-target="30" data-max="30"><div class="ring"><div class="bar"></div></div><div class="num">0+</div><small>Proyectos</small></div>
-              <div class="gauge" data-target="20" data-max="25"><div class="ring"><div class="bar"></div></div><div class="num">0+</div><small>Clientes</small></div>
-            </div>
-
-            <!-- MÓDULOS -->
             <div class="about-mods">
               <div class="about-box">
                 <h4>Cómo trabajo</h4>
@@ -162,7 +171,7 @@
       <div class="monitor fit">
         <div class="titlebar">
           <span class="light r"></span><span class="light y"></span><span class="light g"></span>
-          <b>Servicios</b>
+          <b>Servicios de desarrollo</b>
         </div>
         <div class="screen">
           <header class="section-head">
@@ -174,12 +183,12 @@
       </div>
     </section>
 
-    <!-- PROYECTOS -->
+    <!-- PROYECTOS (GRID) -->
     <section id="projects" class="view">
       <div class="monitor fit">
         <div class="titlebar">
           <span class="light r"></span><span class="light y"></span><span class="light g"></span>
-          <b>Algunos proyectos destacados</b>
+          <b>proyectos destacados</b>
         </div>
         <div class="screen">
           <header class="section-head projects-head">
@@ -187,6 +196,34 @@
             <span id="animProject" class="mini proj-mini"></span>
           </header>
           <div id="projectsGrid" class="showcase two-by-two"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETALLE DE PROYECTO -->
+    <section id="project" class="view">
+      <div class="monitor fit">
+        <div class="titlebar">
+          <span class="light r"></span><span class="light y"></span><span class="light g"></span>
+          <b>project — detalle</b>
+        </div>
+        <div class="screen">
+          <div class="proj-detail-head">
+            <button class="btn outline" id="backProjects">← Volver</button>
+            <h2 id="projTitle" class="h2"></h2>
+          </div>
+
+          <div class="proj-detail">
+            <div class="gallery">
+              <button class="gctl prev">◀</button>
+              <img id="projImg" alt="Galería del proyecto">
+              <button class="gctl next">▶</button>
+            </div>
+            <div class="pinfo">
+              <p id="projDesc" class="desc"></p>
+              <div id="projLinks" class="links"></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -217,16 +254,21 @@
       <div class="monitor fit">
         <div class="titlebar">
           <span class="light r"></span><span class="light y"></span><span class="light g"></span>
-          <b>Experiencia</b>
+          <b>Experiencias</b>
         </div>
         <div class="screen">
           <header class="section-head">
-            <h2 class="h2">Experiencia</h2>
+            <h2 class="h2"></h2>
             <p class="sub">Ruta técnica y formación.</p>
           </header>
           <div class="galaxy-wrap lines">
             <canvas id="xpSpace" aria-hidden="true"></canvas>
+
+            <!-- Desktop: escalera -->
             <div class="timeline glowline" id="timeline"></div>
+
+            <!-- Mobile: cards como Habilidades -->
+            <div id="xpGrid" class="orbs two-by-two xp-grid"></div>
           </div>
         </div>
       </div>
@@ -237,7 +279,7 @@
       <div class="monitor fit">
         <div class="titlebar">
           <span class="light r"></span><span class="light y"></span><span class="light g"></span>
-          <b><i></i> Iniciar proyecto</b>
+          <b>Iniciar proyecto</b>
         </div>
         <div class="screen">
           <header class="section-head">
@@ -246,7 +288,7 @@
           </header>
           <div class="contact-grid">
             <form id="contactForm" class="fx-form">
-              <div class="field"><input id="cName" type="text" placeholder=" " required><label for="cName">Nombre y Apellido</label></div>
+              <div class="field"><input id="cName" type="text" placeholder=" " required><label for="cName">Nombre</label></div>
               <div class="field"><input id="cEmail" type="email" placeholder=" " required><label for="cEmail">Email</label></div>
 
               <label class="label-top" for="cService">Servicio</label>
@@ -271,7 +313,8 @@
 
             <aside class="contact-card">
               <h3 class="h3">Disponibilidad</h3>
-              <ul class="list"><li>AR Tucumán</li><li>Remoto o híbrido</ul>
+              <ul class="list"><li>AR Tucumán (UTC-3)</li><li>Remoto o híbrido</li><li>Facturación: A convenir</li></ul>
+              <h3 class="h3">Canales</h3>
               <ul id="channels" class="list"></ul>
 
               <div class="social-row">
@@ -289,15 +332,7 @@
     </section>
   </main>
 
-  <!-- LIGHTBOX -->
-  <div id="lightbox" class="lightbox">
-    <img alt="Galería"/>
-    <button class="btn-nav prev">◀</button>
-    <button class="btn-nav next">▶</button>
-    <button class="btn-nav close">✕</button>
-  </div>
-
   <footer class="site-footer"><p>© <span id="year"></span> Julieta Meza.</p></footer>
-  <script src="./app.js?v=211"></script>
+  <script src="./app.js?v=310"></script>
 </body>
 </html>

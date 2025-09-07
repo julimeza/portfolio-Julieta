@@ -1,11 +1,11 @@
-/* app v211 — Experiencia estilo original (izq/der) + botones servicios alineados + fix loader-space */
+/* app v310 — Foto más chica en Sobre mí + contadores más lentos y antes del resto + proyectos reordenados */
 
 /* ====== CONTENIDO ====== */
 const CMS = {
   name:"Julieta Meza",
   email:"mezajulieta041@gmail.com", whatsapp:"+5493815678649",
   avatarPlain:"imagenes/julieta foto.jpeg", avatarEscaped:"imagenes/julieta%20foto.jpeg",
-  bio:`Soy Julieta Meza, Desarrolladora Full-Stack de 22 años y Téc. Univ. en Programación por la UTN FRT (Tucumán). Me apasiona crear soluciones digitales elegantes y funcionales, con foco en experiencia de usuario, rendimiento y escalabilidad. Trabajo con compromiso, responsabilidad y comunicación clara para entregar productos completos y sin fallas. Me actualizo de forma continua para incorporar tecnologías que aporten valor real.`,
+  bio:`Soy Julieta Meza, Desarrolladora Full-Stack de 22 años, me apasiona crear soluciones digitales elegantes y funcionales, con foco en experiencia de usuario. Trabajo con compromiso, responsabilidad y comunicación clara para entregar productos completos y sin fallas. Me actualizo de forma continua para incorporar tecnologías que aporten valor real.`,
   highlights:[
     "Proyectos a medida para negocios y fábricas.",
     "UX, performance y escalabilidad como prioridades.",
@@ -35,31 +35,69 @@ const CMS = {
      desc:"Portfolio impecable, alineado a tu estilo y rubro: diseño, contenido y puesta online para que consigas clientes.",
      links:[{label:"Quiero el mío",url:"#contact"}]},
   ],
-  projects:[
+
+  /* ===== PROYECTOS ORDENADOS (como pediste) ===== */
+  projects: [
     {
+      slug:"pastas-aranda",
       title:"Pastas Aranda",
-      images:["imagenes/indalif.png","imagenes/indalif2.png","imagenes/indalif3.png","imagenes/indalif4.png","imagenes/indalif5.png"],
-      desc:"Plataforma integral (tesis) para una fábrica de pastas. Incluye arqueo de caja; altas/bajas y trazabilidad de mercadería; gestión de clientes mayoristas y distribuidores; cálculo de costos; legajos de empleados; gestión de pedidos; registro de producción diaria; y stock de materia prima y producto final.",
-      links:[{label:"Ver",url:"https://indalif-production.up.railway.app"}]
+      images:[
+        "imagenes/indalif.png","imagenes/indalif2.png","imagenes/indalif3.png",
+        "imagenes/indalif4.png","imagenes/indalif5.png"
+      ],
+      desc:"Plataforma integral (tesis) para fábrica de pastas: arqueo de caja, altas y trazabilidad de mercadería, clientes mayoristas y distribuidores, costos, legajos de empleados, pedidos, producción diaria y stock de materia prima/producto final.",
+      links:[{label:"Abrir proyecto real",url:"https://indalif-production.up.railway.app"}]
     },
     {
+      slug:"novawebs",
+      title:"NovaWebs",
+      images:[
+        "imagenes/nova1.png","imagenes/nova2.png","imagenes/nova3.png",
+        "imagenes/nova4.png","imagenes/nova5.png"
+      ],
+      desc:"Página web de servicios hecha con mi equipo: propuesta clara, secciones de oferta, contacto y conversión. Diseño cuidado, rápido y adaptable a cualquier dispositivo.",
+      links:[{label:"Abrir proyecto real",url:"https://www.novaawebs.com/"}]
+    },
+    {
+      slug:"appentrenador",
       title:"AppEntrenador",
-      images:["imagenes/appEntrenar1.png","imagenes/appEntrenar2.png","imagenes/appEntrenar3.png","imagenes/appEntrenar4.png","imagenes/appEntrenar5.png"],
-      desc:"Aplicación para entrenadores y alumnos con autenticación. Permite diseñar rutinas con tiempos de descanso, seguimiento semanal del progreso, marcación de series completadas y reporte de incidencias por parte del alumno. El entrenador accede a un panel con métricas por alumno, evolución y tiempos de descanso.",
-      links:[{label:"Ver",url:"https://app-entrenador.vercel.app"}]
+      images:[
+        "imagenes/appEntrenar1.png","imagenes/appEntrenar2.png","imagenes/appEntrenar3.png",
+        "imagenes/appEntrenar4.png","imagenes/appEntrenar5.png"
+      ],
+      desc:"App para entrenadores y alumnos: autenticación, rutinas con tiempos de descanso, seguimiento semanal, marcación de series e incidencias. Panel del entrenador con métricas por alumno y evolución.",
+      links:[{label:"Abrir proyecto real",url:"https://app-entrenador.vercel.app"}]
     },
     {
-      title:"Taller Olmos",
-      images:["imagenes/taller1.png","imagenes/taller2.png","imagenes/taller3.png","imagenes/taller4.png","imagenes/taller5.png"],
-      desc:"Landing/eCommerce para el taller: catálogo administrable por el dueño (alta/edición de productos), compra con múltiples medios de pago y contacto directo por WhatsApp o correo.",
-      links:[{label:"Ver",url:"https://taller-olmos.vercel.app"}]
-    },
-    {
+      slug:"gastronomia",
       title:"Gastronomía",
-      images:["imagenes/gastronomia1.png","imagenes/gastronomia2.png","imagenes/gastronomia3.png","imagenes/gastronomia4.png","imagenes/gastronomia5.png"],
-      desc:"Aplicación para restaurante (Jujuy) con acceso para empleados. Módulo Stock & Pedidos: ABM de productos, precios y existencias; toma de pedidos y visualización en tabla. Módulo Caja: registros de movimientos con montos, medios de pago, totales y auditoría."
+      images:[
+        "imagenes/gastronomia1.png","imagenes/gastronomia2.png","imagenes/gastronomia3.png",
+        "imagenes/gastronomia4.png","imagenes/gastronomia5.png"
+      ],
+      desc:"App para restaurante (Jujuy). Stock & Pedidos: ABM de productos, precios y existencias; toma de pedidos y visualización en tabla. Caja: registro de movimientos con montos, medios de pago y totales."
+    },
+    {
+      slug:"cooksmart",
+      title:"CookSmart",
+      images:[
+        "imagenes/cook1.png","imagenes/cook2.png","imagenes/cook3.png","imagenes/cook4.png"
+      ],
+      desc:"App que, usando una API, genera 2 recetas con los ingredientes que tenés a mano. Pensada para gente sin experiencia en cocina, estudiantes o cualquiera que quiera resolver rápido con lo disponible."
+      // links:[{label:"Abrir proyecto real",url:"https://..."}]
+    },
+    {
+      slug:"taller-olmos",
+      title:"Taller Olmos",
+      images:[
+        "imagenes/taller1.png","imagenes/taller2.png","imagenes/taller3.png",
+        "imagenes/taller4.png","imagenes/taller5.png"
+      ],
+      desc:"Landing/eCommerce del taller: catálogo administrable (alta/edición de productos), múltiples medios de pago y contacto directo por WhatsApp o correo.",
+      links:[{label:"Abrir proyecto real",url:"https://taller-olmos.vercel.app"}]
     },
   ],
+
   skills:[
     {group:"Frontend",zones:{
       "Stack":[ "HTML5","CSS3 / SASS","TypeScript","JavaScript (ES6+)","React","Next.js (v14+)","Bootstrap" ]
@@ -96,6 +134,7 @@ const CMS = {
       ]},
     {role:"Inglés",org:"Skillable",period:"Nivel B1 — en curso",
       bullets:[
+        "Inglés técnico",
         "Comunicación con equipos remotos.",
         "Plan de mejora continua hasta intermedio-alto."
       ]},
@@ -125,13 +164,11 @@ function setAvatarImg(){
   const img=$('#avatarImg'); if(!img) return;
   img.onload=fitActive; img.src=CMS.avatarEscaped; img.onerror=()=>{img.onerror=null; img.src=CMS.avatarPlain;};
 }
-
 function placeCat(){
   const catBox=$('#catPeek');
   const mods=$('#about .about-mods');
   const grid=$('#about .about-grid');
   if(!catBox || !mods || !grid) return;
-
   if(isMobile()){
     if(catBox.parentElement!==mods){ mods.appendChild(catBox); }
     catBox.classList.add('in-mods');
@@ -141,7 +178,6 @@ function placeCat(){
   }
   fitActive();
 }
-
 function buildAbout(){
   $('#bio').textContent=CMS.bio;
   const hi=$('#highlights'); hi.innerHTML="";
@@ -176,40 +212,55 @@ function buildServices(){
   if(window.lottie){ CMS.services.forEach(s=>{ const c=$(`#anim-${s.key}`); if(!c) return; const a=lottie.loadAnimation({container:c,renderer:'svg',loop:true,autoplay:true,path:map[s.key]}); a.addEventListener('DOMLoaded',fitActive);});}
 }
 
-/* ====== PROYECTOS + LIGHTBOX ====== */
-let LB=null;
-function buildLightbox(){
-  const wrap=$('#lightbox'); LB={el:wrap,img:wrap.querySelector('img'),prev:wrap.querySelector('.prev'),next:wrap.querySelector('.next'),close:wrap.querySelector('.close'),list:[],idx:0};
-  LB.prev.addEventListener('click',()=>showIdx(LB.idx-1));
-  LB.next.addEventListener('click',()=>showIdx(LB.idx+1));
-  LB.close.addEventListener('click',closeGallery);
-  wrap.addEventListener('click',e=>{if(e.target===wrap) closeGallery();});
-  addEventListener('keydown',e=>{if(!wrap.classList.contains('show')) return; if(e.key==='Escape') closeGallery(); if(e.key==='ArrowRight') showIdx(LB.idx+1); if(e.key==='ArrowLeft') showIdx(LB.idx-1);});
-}
-function openGallery(images,start=0){ LB.list=images; LB.idx=start; showIdx(start); LB.el.classList.add('show'); }
-function closeGallery(){ LB.el.classList.remove('show'); }
-function showIdx(i){ if(!LB.list.length) return; LB.idx=(i+LB.list.length)%LB.list.length; LB.img.src=LB.list[LB.idx]; }
-
+/* ====== PROYECTOS (GRID) ====== */
+function slugify(t){return t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');}
 function buildProjects(){
   const wrap=$('#projectsGrid'); wrap.innerHTML="";
   CMS.projects.forEach(p=>{
-    const imgs=p.images||[];
+    if(!p.slug) p.slug=slugify(p.title);
     const card=document.createElement('article'); card.className='project';
-    card.innerHTML=`<img class="cover" src="${imgs[0]||''}" alt="Proyecto ${p.title}">
-    <div class="overlay"><div>
-      <h3 class="title">${p.title}</h3><p>${p.desc||""}</p>
-      <div class="links">
-        ${(p.links||[]).map(l=>`<a class="btn chip" href="${l.url}" target="_blank" rel="noopener">${l.label}</a>`).join('')}
-        ${imgs.length>1?`<button class="btn chip view-gallery">Galería</button>`:''}
-      </div>
-    </div></div>`;
-    const open=()=>openGallery(imgs,0);
-    card.querySelector('.cover')?.addEventListener('load',fitActive);
-    card.querySelector('.cover')?.addEventListener('click',open);
-    card.querySelector('.view-gallery')?.addEventListener('click',open);
+    const first=(p.images && p.images[0]) || '';
+    card.innerHTML=`
+      <img class="cover" src="${first}" alt="${p.title}">
+      <div class="footer">
+        <h3 class="title">${p.title}</h3>
+        <div class="faright">
+          <a class="btn chip" href="#project/${p.slug}" data-link>Ver</a>
+        </div>
+      </div>`;
+    card.querySelector('.cover').addEventListener('click',()=>{navigateTo(`#project/${p.slug}`)});
     wrap.appendChild(card);
   });
   if(window.lottie){ const c=$('#animProject'); if(c){ lottie.loadAnimation({container:c,renderer:'svg',loop:true,autoplay:true,path:'card/proyecto.json'}); } }
+}
+
+/* ====== PROYECTO — PÁGINA DE DETALLE ====== */
+let currentProj={ idx:0, list:[] };
+function showProjectDetail(slug){
+  const proj = CMS.projects.find(p=>p.slug===slug);
+  if(!proj){ navigateTo('#projects'); return; }
+  $('#projTitle').textContent = proj.title;
+  $('#projDesc').textContent  = proj.desc || '';
+  const links = $('#projLinks'); links.innerHTML='';
+  (proj.links||[]).forEach(l=>{
+    const a=document.createElement('a');
+    a.className='btn outline'; a.href=l.url; a.target='_blank'; a.rel='noopener';
+    a.textContent=l.label; links.appendChild(a);
+  });
+
+  currentProj.list = proj.images || [];
+  currentProj.idx  = 0;
+  const img = $('#projImg');
+  img.src = currentProj.list[0] || '';
+  $('.gctl.prev').onclick = ()=>projStep(-1);
+  $('.gctl.next').onclick = ()=>projStep(1);
+  $('#backProjects').onclick = ()=>navigateTo('#projects');
+  showSection('project');
+}
+function projStep(step){
+  if(!currentProj.list.length) return;
+  currentProj.idx = (currentProj.idx + step + currentProj.list.length) % currentProj.list.length;
+  $('#projImg').src = currentProj.list[currentProj.idx];
 }
 
 /* ====== HABILIDADES ====== */
@@ -228,56 +279,47 @@ function buildSkills(){
   }
 }
 
-/* ====== EXPERIENCIA — alternando izquierda/derecha ====== */
+/* ====== EXPERIENCIA — Desktop escalera / Mobile orbs ====== */
 function buildExperience(){
-  const t = $('#timeline');
-  t.innerHTML = '';
-
-  // Orden explícito: IZQ, DER, IZQ, DER
-  const sides = ['left','right','left','right'];
-
-  CMS.experience.forEach((e, i) => {
-    const side = sides[i] || (i % 2 === 0 ? 'left' : 'right'); // fallback si hay más items
-    const it = document.createElement('div');
-    it.className = `item ${side}`;
-
-    // Escalera: una tarjeta por fila
-    it.style.gridRow = String(i + 1);
-    it.style.gridColumn = (side === 'right') ? '2' : '1';
-
-    it.innerHTML = `
-      <div class="meta"><strong>${e.role}</strong> · ${e.org} · ${e.period}</div>
-      <ul>${e.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
-    `;
+  const t=$('#timeline'); t.innerHTML="";
+  const sides = ['left','right','left','right']; // 1 izq, 2 der, 3 izq, 4 der
+  CMS.experience.forEach((e,i)=>{
+    const side = sides[i] || (i%2===0?'left':'right');
+    const it=document.createElement('div');
+    it.className=`item ${side}`;
+    it.style.gridRow = String(i+1);
+    it.style.gridColumn = (side==='right') ? '2' : '1';
+    it.innerHTML=`<div class="meta"><strong>${e.role}</strong> · ${e.org} · ${e.period}</div><ul>${e.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>`;
     t.appendChild(it);
+  });
+
+  // Mobile grid (como Habilidades)
+  const g=$('#xpGrid'); g.innerHTML='';
+  CMS.experience.forEach(e=>{
+    const card=document.createElement('div');
+    card.className='skill-card';
+    card.innerHTML=`<h3>${e.role}</h3>
+      <div class="skill-zones">
+        <div class="skill-zone"><h4>${e.org}</h4><div class="tags"><span class="badge">${e.period}</span></div></div>
+        <div class="skill-zone"><h4>Resumen</h4><div class="tags">${e.bullets.map(b=>`<span class="badge">${b}</span>`).join('')}</div></div>
+      </div>`;
+    g.appendChild(card);
   });
 }
 
-
-
 /* ====== CONTACTO ====== */
 function setupContact(){
-  const sel = $('#cService');
-  if (sel) {
-    sel.innerHTML =
-      `<option value="" disabled selected>Seleccioná un servicio…</option>` +
-      CMS.services.map(s => `<option>${s.title}</option>`).join('');
-  }
-
-  $('#contactForm')?.addEventListener('submit', e => {
+  const sel=$('#cService'); if(sel){ sel.innerHTML=`<option value="" disabled selected>Seleccioná un servicio…</option>`+CMS.services.map(s=>`<option>${s.title}</option>`).join(''); }
+  $('#contactForm')?.addEventListener('submit',e=>{
     e.preventDefault();
-    const n = $('#cName').value.trim();
-    const em = $('#cEmail').value.trim();
-    const srv = $('#cService').value;
-    const m = $('#cMsg').value.trim();
-    const txt = encodeURIComponent(`Hola Julieta, soy ${n} (${em}). Me interesa: ${srv}. ${m}`);
-    open(`https://wa.me/${fmtPhone(CMS.whatsapp)}?text=${txt}`, '_blank');
+    const n=$('#cName').value.trim(), em=$('#cEmail').value.trim(), srv=$('#cService').value, m=$('#cMsg').value.trim();
+    const txt=encodeURIComponent(`Hola Julieta, soy ${n} (${em}). Me interesa: ${srv}. ${m}`);
+    open(`https://wa.me/${fmtPhone(CMS.whatsapp)}?text=${txt}`,'_blank');
   });
 
-  // ✅ NUEVO: abrir Gmail compose con los datos del form
+  // Gmail compose + fallback
   $('#sendGmail')?.addEventListener('click', e => {
     e.preventDefault();
-
     const n   = ($('#cName').value || '').trim() || 'Sin nombre';
     const em  = ($('#cEmail').value || '').trim();
     const srv = ($('#cService').value || '').trim() || 'Consulta';
@@ -292,14 +334,10 @@ Soy ${n}${em ? ` (${em})` : ''}.
 Servicio: ${srv}
 Mensaje: ${m}
 
-Gracias.`
-    );
+Gracias.`);
 
-    // Abre Gmail (si el usuario está logueado en Gmail)
     const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${encodeURIComponent(to)}&su=${su}&body=${bo}`;
     const win = window.open(gmailUrl, '_blank');
-
-    // Fallback a mailto si el popup fue bloqueado o no hay Gmail
     setTimeout(() => {
       if (!win || win.closed || typeof win.closed === 'undefined') {
         location.href = `mailto:${to}?subject=${su}&body=${bo}`;
@@ -307,9 +345,8 @@ Gracias.`
     }, 500);
   });
 
-  $('#channels').innerHTML = CMS.channels.map(c => `<li>${c.label}: ${c.value}</li>`).join('');
+  $('#channels').innerHTML = CMS.channels.map(c=>`<li>${c.label}: ${c.value}</li>`).join('');
 }
-
 
 /* ====== FONDOS Y FX ====== */
 function starfield(){
@@ -344,8 +381,8 @@ function constellations(canvasId){
   addEventListener('resize',resize); resize();
 }
 
-/* ====== CONTADORES (secuenciales) ====== */
-function countTo(el, n, ms=1000){
+/* ====== CONTADORES (más lentos y secuenciales) ====== */
+function countTo(el, n, ms=2000){  // antes 1000
   let st=performance.now();
   function tick(t){ const p=Math.min((t-st)/ms,1); el.textContent = Math.floor(p*n) + '+'; if(p<1) requestAnimationFrame(tick); }
   requestAnimationFrame(tick);
@@ -358,12 +395,15 @@ function animateGaugesSequential(){
     const ring=g.querySelector('.ring'), bar=g.querySelector('.bar'), num=g.querySelector('.num');
     num.textContent='0+';
     let start=performance.now();
-    function step(t){ const p=Math.min((t-start)/1000,1), deg=p*pct*100;
+    function step(t){ 
+      const p=Math.min((t-start)/2000,1);  // antes 1000
+      const deg=p*pct*100;
       ring.style.background=`radial-gradient(closest-side,#0e173d 74%,transparent 75% 99%,#0e173d 0),conic-gradient(var(--acc-2) ${deg}%, #1a275c 0)`;
-      bar.style.transform=`rotate(${p*pct*360-90}deg)`; if(p<1){ requestAnimationFrame(step);} else { animOne(idx+1); }
+      bar.style.transform=`rotate(${p*pct*360-90}deg)`;
+      if(p<1){ requestAnimationFrame(step);} else { animOne(idx+1); }
     }
     requestAnimationFrame(step);
-    countTo(num,target,1000);
+    countTo(num,target,2000);
   }
   animOne(0);
 }
@@ -380,10 +420,11 @@ function resetAndAnimateGauges(){
 function setupNav(){
   $('#navToggle').addEventListener('click',()=>{ const nav=$('#nav'); const open=!nav.classList.contains('show'); nav.classList.toggle('show',open); $('#navToggle').setAttribute('aria-expanded',String(open));});
   $$('#nav a,[data-link]').forEach(a=>a.addEventListener('click',e=>{
-    const h=a.getAttribute('href'); if(h&&h.startsWith('#')){ e.preventDefault(); history.pushState({},'',h); handleHash(); $('#nav').classList.remove('show'); }
+    const h=a.getAttribute('href'); if(h&&h.startsWith('#')){ e.preventDefault(); navigateTo(h); $('#nav').classList.remove('show'); }
   }));
   addEventListener('popstate',handleHash); addEventListener('hashchange',handleHash);
 }
+function navigateTo(h){ history.pushState({},'',h); handleHash(); }
 function showSection(id){
   const t=$('#transition'); t.classList.add('show');
   setTimeout(()=>{
@@ -391,33 +432,26 @@ function showSection(id){
     (document.getElementById(id)||$('#home')).classList.add('active');
     if(id==='about'){ resetAndAnimateGauges(); placeCat(); }
     fitActive();
-    setTimeout(()=>t.classList.remove('show'), 240);
-  },80);
+    setTimeout(()=>t.classList.remove('show'), 220);
+  },60);
 }
-function handleHash(){ const id=(location.hash||'#home').slice(1); showSection(id); }
+function handleHash(){
+  const hash = (location.hash||'#home');
+  if(hash.startsWith('#project/')){
+    const slug = hash.split('/')[1] || '';
+    showProjectDetail(slug);
+    return;
+  }
+  showSection(hash.slice(1));
+}
 
-/* ====== LOADER (fix: Space ya no navega luego de cerrar) ====== */
+/* ====== LOADER ====== */
 function setupLoader(){
   const L = document.getElementById('loader');
   const b = document.getElementById('startBtn');
-
-  const go = () => {
-    removeEventListener('keydown', handler);
-    L.classList.remove('show');
-    showSection('home');
-    fitActive();
-  };
-
-  const handler = (e) => {
-    if (!L.classList.contains('show')) return;
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      go();
-    }
-  };
-
-  b.addEventListener('click', go);
-  addEventListener('keydown', handler);
+  const go = () => { removeEventListener('keydown', handler); L.classList.remove('show'); showSection('home'); fitActive(); };
+  const handler = (e) => { if (!L.classList.contains('show')) return; if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } };
+  b.addEventListener('click', go); addEventListener('keydown', handler);
 }
 
 /* ====== INIT ====== */
@@ -425,7 +459,7 @@ function init(){
   $('#year').textContent=new Date().getFullYear();
 
   buildAbout(); buildServices(); buildProjects(); buildSkills(); buildExperience();
-  setupContact(); buildLightbox();
+  setupContact();
 
   starfield(); heroParticles(); constellations('xpSpace');
 
